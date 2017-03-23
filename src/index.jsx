@@ -3,13 +3,10 @@ import ReactDOM from 'react-dom';
 import {Router, IndexRoute, Route, browserHistory} from 'react-router';
 
 //Redux 
-import { createStore, combineReducers } from 'redux'
-import { Provider } from 'react-redux'
-import reducers from 'Reducers'
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
-
-// Sync History and Store 
-const history = syncHistoryWithStore(browserHistory, store)
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+import reducers from 'Reducers';
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 
 //components 
 import App from 'App';
@@ -22,7 +19,10 @@ const store = createStore(
     ...reducers,
     routing: routerReducer
   })
-)
+);
+
+// Sync History and Store 
+const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render((
 	 <Provider store={store}>
