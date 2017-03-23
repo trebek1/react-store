@@ -6,7 +6,7 @@ import {Router, IndexRoute, Route, browserHistory} from 'react-router';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from 'Reducers';
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux';	
 
 //components 
 import App from 'App';
@@ -14,6 +14,7 @@ import Login from './components/Login';
 import Wrapper from './components/Wrapper';
 
 
+// Create the store 
 const store = createStore(
   combineReducers({
     ...reducers,
