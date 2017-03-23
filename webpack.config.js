@@ -31,7 +31,8 @@ module.exports = {
     root: __dirname,
     extensions: ['', '.js', '.jsx'],
     alias: {
-      App: 'src/components/App.jsx'
+      App: 'src/components/App.jsx',
+      Reducers: "src/reducers"
     }
   }
 };
