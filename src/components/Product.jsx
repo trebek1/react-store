@@ -17,6 +17,7 @@ export default class Product extends Component {
   		const inlineBlock = {
   			"display": "inline-block"
   		}
+      
     return (
     	<div style={inlineBlock} >
     		<div style={styles}>

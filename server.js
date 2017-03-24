@@ -11,11 +11,8 @@ var compiler = webpack(config);
 
 //create session 
 
-db.User.createSecure('alex','password');
-
-
 app.use(session({
-	secret: "super secret",
+	secret: "super secret password",
 	resave: false,
 	saveUninitialized: true
 }));

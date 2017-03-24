@@ -1,18 +1,5 @@
 import axios from 'axios';
 
-export function getProducts(){
-  return axios({
-      method: 'get',
-      url: '/products'
-    }).then((response) => {
-      console.log("this is resp ", response)
-      return response; 
-
-    }).catch((error)=>{
-      return []; 
-    })
-}
-
 export function login(username, password){
     return axios({
       method: 'post',

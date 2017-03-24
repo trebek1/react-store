@@ -5,13 +5,13 @@ import Product from './Product';
 export default class Products extends Component {
 
 	renderProducts(){
-		let products = this.props.products || []; 
+		let products = this.props.state.products.products || []; 
 
 		if(products.length > 0){ 
 		return(
 			<div> 
 				{products.map(function(product,i){
-					return <Product product={product} />
+					return <Product key={i} product={product} />
 				})}
 			</div>)
 		}else{
@@ -19,7 +19,6 @@ export default class Products extends Component {
 		}
 	}
   	render() {
-
 	    return (
 	    	<div>	
 		        <div className="product-list">
