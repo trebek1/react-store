@@ -5,84 +5,28 @@ import Product from './Product';
 export default class Products extends Component {
 
 	renderProducts(){
-		let products = {
+		let products = this.props.products || []; 
 
-	"products" : [
-		{
-			"title": "Gund Pusheen Plush with Cookie",
-			"price": 16.78, 
-			"inStock": true, 
-			"company": "GUND",
-			"stars": 4.6, 
-			"img": "https://images-na.ssl-images-amazon.com/images/I/81yoVFBAxpL._SX522_.jpg"
-		}, 
-		{
-			"title": "Microsoft Xbox One 500 GB Console - Black",
-			"price": 259.88, 
-			"inStock": true, 
-			"company": "Microsoft",
-			"stars": 4.0, 
-			"img": "https://images-na.ssl-images-amazon.com/images/I/61CnOKdmBeL._SX425_.jpg"
-		}, 
-		{
-			"title": "Apple MacBook Pro MLW72LL/A 15.4-inch Laptop with Touch Bar (2.6GHz quad-core Intel Core i7, 256GB Retina Display), Silver",
-			"price": 2244.00, 
-			"inStock": true, 
-			"company": "Apple",
-			"stars": 4.3, 
-			"img": "https://images-na.ssl-images-amazon.com/images/I/61FFeaV3gRL._SX522_.jpg"
-		}, 
-		{
-			"title": "Mad Catz R.A.T.7 Gaming Mouse for PC and Mac",
-			"price": 78.95, 
-			"inStock": true, 
-			"company": "Mad Catz",
-			"stars": 3.7, 
-			"img": "https://images-na.ssl-images-amazon.com/images/I/71TXIRHwb7L._SY355_.jpg"
-		}, 
-		{
-			"title": "Apple iPhone 7 Unlocked CDMA/GSM 32GB A1660 MNAC2LL/A - US Version (Black)",
-			"price": 725.00, 
-			"inStock": true, 
-			"company": "Apple",
-			"stars": 4.5, 
-			"img": "https://images-na.ssl-images-amazon.com/images/I/71GrHyg9hrL._SY445_.jpg"
+		if(products.length > 0){ 
+		return(
+			<div> 
+				{products.map(function(product,i){
+					return <Product product={product} />
+				})}
+			</div>)
+		}else{
+			return <div> No Products </div>
 		}
-	]
-
-};
-	if(products.products.length > 0){ 
-	return(
-
-		<div> 
-
-		{products.products.map(function(product,i){
-
-			return <Product product={product} />
-
-		})}
-
-		</div>)
-
-	}else{
-		return <div> No Products </div>
 	}
-
-}
-
   	render() {
 
-  		
-
-
-
-    return (
-    	<div>	
-	        <div className="product-list">
-	      		{this.renderProducts()} 
-	      	 </div>
-	      	 <div><Link to="/">home</Link></div>
-	    </div>
-    );
-  }
+	    return (
+	    	<div>	
+		        <div className="product-list">
+		      		{this.renderProducts()} 
+		      	 </div>
+		      	 <div><Link to="/">home</Link></div>
+		    </div>
+	    );
+  	}
 }

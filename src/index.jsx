@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, IndexRoute, Route, browserHistory} from 'react-router';
+import {getProducts} from './utils/routes.jsx';
 
 //Redux 
 import { createStore, combineReducers } from 'redux';
@@ -14,7 +15,6 @@ import Login from './components/Login';
 import Wrapper from './components/Wrapper';
 import Products from './components/Products';
 
-
 // Create the store 
 const store = createStore(
   combineReducers({
@@ -22,6 +22,10 @@ const store = createStore(
     routing: routerReducer
   })
 );
+
+//Call Async Call here to load redux store with data from database 
+console.log("this is products ", getProducts());
+ 
 
 // Sync History and Store 
 const history = syncHistoryWithStore(browserHistory, store);
